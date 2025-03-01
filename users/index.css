@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #01c2e4;
     color: white;
     padding: 15px;
     text-align: center;
@@ -33,20 +33,31 @@ nav ul li a {
 .slider {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 80%; /* Pastikan slider memenuhi lebar layar */
     margin: 20px auto;
     overflow: hidden;
 }
 
 .slides {
     display: flex;
+    width: 100%; /* Sesuaikan dengan jumlah slide */
     transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    flex: 0 0 100%;
 }
 
 .slide img {
     width: 100%;
+    height: auto; /* Jaga rasio gambar */
     border-radius: 10px;
+    display: block;
+    object-fit: cover; /* Pastikan gambar tidak terdistorsi */
 }
+
+
 
 .prev, .next {
     position: absolute;
@@ -149,3 +160,72 @@ footer {
     color: white;
     margin-top: 20px;
 }
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 20px;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    margin: 20px;
+    min-width: 200px;
+  }
+
+  .footer-logo img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .footer-about p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .footer-links a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: #f39c12;
+  }
+
+  .footer-contact p {
+    margin-bottom: 10px;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #f39c12;
+    color: #000;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+
+  .social-icons a:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+  }

@@ -22,9 +22,8 @@
     
     <section class="slider">
         <div class="slides">
-            <div class="slide"> <img src="assets/images/slide1.jpg" alt="Slide 1"> </div>
-            <div class="slide"> <img src="assets/images/slide2.jpg" alt="Slide 2"> </div>
-            <div class="slide"> <img src="assets/images/slide3.jpg" alt="Slide 3"> </div>
+            <div class="slide"> <img src="/images/2.png" alt="Slide 1"> </div>
+            <div class="slide"> <img src="/images/1.png" alt="Slide 2"> </div>
         </div>
         <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="next" onclick="moveSlide(1)">&#10095;</button>
@@ -34,16 +33,16 @@
         <section class="products">
             <h2>Produk Kami</h2>
             <div class="categories">
-                <button onclick="filterCategory('semua')">Semua</button>
-                <button onclick="filterCategory('elektrik')">Elektrik</button>
-                <button onclick="filterCategory('material')">Material</button>
-                <button onclick="filterCategory('alat')">Alat</button>
+                <button onclick="scrollToCategory('all')">Semua</button>
+                <button onclick="scrollToCategory('elektrik')">Elektrik</button>
+                <button onclick="scrollToCategory('material')">Material</button>
+                <button onclick="scrollToCategory('alat')">Alat</button>
             </div>
             
-            <div class="product-section">
+            <div class="product-section" id="elektrik">
                 <h3>Elektrik</h3>
                 <div class="product-container">
-                    <button class="scroll-left" onclick="scrollProducts(-1, 'elektrik')">&#10094;</button>
+                    <button class="scroll-left" onclick="scrollProducts(-1, 'elektrik')">⮜</button>
                     <div class="product-list elektrik">
                         <div class="product" data-category="elektrik">
                             <img src="assets/images/product1.jpg" alt="Produk Elektrik">
@@ -52,14 +51,14 @@
                             <button>Beli Sekarang</button>
                         </div>
                     </div>
-                    <button class="scroll-right" onclick="scrollProducts(1, 'elektrik')">&#10095;</button>
+                    <button class="scroll-right" onclick="scrollProducts(1, 'elektrik')">⮞</button>
                 </div>
             </div>
 
-            <div class="product-section">
+            <div class="product-section" id="material">
                 <h3>Material</h3>
                 <div class="product-container">
-                    <button class="scroll-left" onclick="scrollProducts(-1, 'material')">&#10094;</button>
+                    <button class="scroll-left" onclick="scrollProducts(-1, 'material')">⮜</button>
                     <div class="product-list material">
                         <div class="product" data-category="material">
                             <img src="assets/images/product2.jpg" alt="Produk Material">
@@ -68,14 +67,14 @@
                             <button>Beli Sekarang</button>
                         </div>
                     </div>
-                    <button class="scroll-right" onclick="scrollProducts(1, 'material')">&#10095;</button>
+                    <button class="scroll-right" onclick="scrollProducts(1, 'material')">⮞</button>
                 </div>
             </div>
 
-            <div class="product-section">
+            <div class="product-section" id="alat">
                 <h3>Alat</h3>
                 <div class="product-container">
-                    <button class="scroll-left" onclick="scrollProducts(-1, 'alat')">&#10094;</button>
+                    <button class="scroll-left" onclick="scrollProducts(-1, 'alat')">⮜</button>
                     <div class="product-list alat">
                         <div class="product" data-category="alat">
                             <img src="assets/images/product3.jpg" alt="Produk Alat">
@@ -84,16 +83,58 @@
                             <button>Beli Sekarang</button>
                         </div>
                     </div>
-                    <button class="scroll-right" onclick="scrollProducts(1, 'alat')">&#10095;</button>
+                    <button class="scroll-right" onclick="scrollProducts(1, 'alat')">⮞</button>
                 </div>
             </div>
         </section>
     </main>
     
     <footer>
-        <p>&copy; 2025 Toko Bangunan</p>
-    </footer>
+        <div class="footer-container">
+          <!-- Logo dan Deskripsi -->
+          <div class="footer-section footer-logo text-center">
+            <img src="/images/udpincuranjaya.png" alt="Logo Perusahaan" />
+            <p>Menyelami Keanekaragaman, Menyatu dalam Pengetahuan Nusantara.</p>
+          </div>
+  
+          <!-- Navigasi Cepat -->
+          <div class="footer-section footer-links">
+          </div>
+  
+          <!-- Kontak -->
+          <div class="footer-section footer-contact">
+            <h3>Kontak</h3>
+            <p>Pasar 3, Jl. Kelambir 5 No. 24 A, Tj. Gusta, Kec. Sunggal, Kota Medan, Sumatera Utara 20105</p>
+            <p>Telepon: 0858-3196-7125</p>
+            <p>Email: Udpincuranjaya@gmail.com</p>
+  
+            <div class="social-icons">
+              <a href="#" title="Facebook">F</a>
+              <a href="#" title="Twitter">T</a>
+              <a href="#" title="Instagram">I</a>
+              <a href="#" title="YouTube">Y</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="footer-bottom">
+          <p>&copy; UD PINCURAN JAYA</p>
+        </div>
+      </footer>
     
+    <script>
+        function scrollToCategory(category) {
+            let target;
+            if (category === 'all') {
+                target = document.querySelector('main');
+            } else {
+                target = document.getElementById(category);
+            }
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
